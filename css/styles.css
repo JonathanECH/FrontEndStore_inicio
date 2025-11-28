@@ -40,7 +40,7 @@ a {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
 }
 
 h1,
@@ -169,10 +169,6 @@ h3 {
     background-image: url(../img/grafico2.jpg);
 }
 
-.grafico__imagen {
-    width: 100%;
-}
-
 /* -----------------------------------------------Sobre nosotros-------------------------------------------------------- */
 .nosotros {
     display: grid;
@@ -180,23 +176,25 @@ h3 {
 
 .nosotros__imagen {
     grid-row: 1/2;
-    width: 100%;
 }
 
 .nosotros__contenido--texto {
     color: var(--blanco);
     font-family: 'Archivo', Arial, Helvetica, sans-serif
 }
+
 /*-------- Bloques ----------*/
 .bloques {
-    font-family: 'Archivo' ,Arial, Helvetica, sans-serif;
+    font-family: 'Archivo', Arial, Helvetica, sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
-.bloque__imagen{
+
+.bloque__imagen {
     width: 70%;
 }
+
 .bloque {
     text-align: center;
 }
@@ -207,6 +205,52 @@ h3 {
 
 .bloque p {
     color: var(--blanco);
+}
+
+/* -----------------------------------------------Productos-------------------------------------------------------- */
+.camisa {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+/* Estilos del formulario */
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.formulario__submit {
+    grid-column: 1/3;
+}
+
+.formulario__campo,
+.formulario__submit{
+    border-radius: .5rem;
+}
+
+.formulario__campo {
+    background: transparent;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--blanco);
+    padding: 1.2rem;
+    border: .8rem solid var(--primarioOcuro);
+    appearance: none;
+}
+
+.formulario__submit {
+    font-family: var(--fuentePrincipal);
+    background-color: var(--secundario);
+    border: none;
+    padding: 1.2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background-color .3s ease;
+}
+
+.formulario__submit:hover {
+    background-color: var(--secundarioOscuro);
 }
 
 
@@ -232,6 +276,13 @@ h3 {
     }
 
     .bloques {
-    grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
 }
+
 }
