@@ -66,6 +66,8 @@ h3 {
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+    text-align: justify;
+    width: 95%;
 }
 
 /*------ Header -----*/
@@ -217,7 +219,7 @@ h3 {
 .formulario {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     justify-content: space-between;
     /* grid-template-columns: repeat(2, 1fr); */
