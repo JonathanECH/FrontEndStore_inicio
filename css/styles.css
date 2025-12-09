@@ -217,15 +217,18 @@ h3 {
 .formulario {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
     /* grid-template-columns: repeat(2, 1fr); */
     gap: 1rem;
 }
 
 .formulario__submit {
-    /* grid-column: 1/2; */
+    display: block;
+    width: 100%;
+    margin: 0 auto;
     order: 3;
-    flex: 100%;
 }
 
 .formulario__campo,
@@ -237,10 +240,21 @@ h3 {
     background: transparent;
     text-align: center;
     font-size: 1.8rem;
+    width: calc(50% - 0.5rem); /* Restamos el gap dividido entre dos */
     color: var(--blanco);
     padding: 0.8rem;
     border: .4rem solid var(--primarioOcuro);
     appearance: none;
+}
+
+.formulario__campo:first-child {
+    /* Anchura de la Talla: 40% del total - la mitad del gap (0.5rem) */
+    width: calc(40% - 0.5rem);
+}
+
+.formulario__campo:nth-child(2) {
+    /* Anchura de la Cantidad: 60% del total - la mitad del gap (0.5rem) */
+    width: calc(60% - 0.5rem);
 }
 
 .formulario__submit {
@@ -268,21 +282,7 @@ h3 {
     }
 }
 
-@media(min-width: 480px) {
 
-    /* Usamos 480px para que funcione en tablets pequeñas */
-    .formulario {
-        display: grid;
-        /* Aquí volvemos a la configuración de dos columnas */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .formulario__submit {
-        /* Y aquí el botón vuelve a ocupar ambas columnas */
-        grid-column: 1/3;
-    }
-}
 
 @media(min-width: 768px) {
     .grid {
@@ -314,9 +314,28 @@ h3 {
         column-gap: 2rem;
     }
 
+    .formulario__campo:first-child,
+    .formulario__campo:nth-child(2) {
+        width: auto;
+    }
+
+    .formulario {
+        display: grid;
+        /* Aquí volvemos a la configuración de dos columnas */
+        grid-template-columns: 40% 60%;
+        gap: 2rem;
+        margin: 0;
+    }
+
+
+
     .formulario__campo {
         font-size: 2rem;
         padding: 1.6rem;
-        border: .6rem solid var(--primarioOcuro);
+        border: .4rem solid var(--primarioOcuro);
+    }
+
+    .formulario__submit {
+        grid-column: 1/3;
     }
 }
